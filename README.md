@@ -16,3 +16,6 @@ will be set to the cookie in order for the user to populate the registration for
 
 ![image](https://user-images.githubusercontent.com/35150986/113470312-e4dd5f00-9411-11eb-99c6-56591223a8b3.png)
 
+![image](https://user-images.githubusercontent.com/35150986/113470329-0dfdef80-9412-11eb-9e9e-22a3f4414726.png)
+
+
