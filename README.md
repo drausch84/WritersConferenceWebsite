@@ -11,4 +11,5 @@ which I had to use JS to maintain the valid combinations.  Invalid combinations 
 Finally, I had to create a function that would create a cookie based on the Conference ID that the user inputs into the registration form.  This conference ID 
 will be set to the cookie in order for the user to populate the registration form when entering that ID number.
 
-## Screenshot
+## Screenshots
+![image](https://user-images.githubusercontent.com/35150986/113470298-cb3c1780-9411-11eb-852a-d5bffb169569.png)
