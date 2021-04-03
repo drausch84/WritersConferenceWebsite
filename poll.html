@@ -22,11 +22,123 @@
     </nav>
 </header>
 <main>
+    <h1 class = "poll-header">
+        Vote For Your Favorite Nominee
+    </h1>
     <div class = "flex-container-1">
-        <h1 class = "poll-h">
-            Check Back Later for Poll Results
-        </h1>
-        <img src = "https://www.emitti.com/wp-content/uploads/2014/01/blue-coming-soon.png" alt = "coming-soon" class = "coming-soon-img">
+        <h2 class = "short-story-noms">
+            Best Short Story Nominees
+        </h2>
+        <section class = "nominee-row">
+            <article class = "author-nom-card">
+                <img src = "https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                     alt = "john-crane-pic" class = "john-crane-pic">
+                <h3 class = "author-name">
+                    Johnathan Crane
+                </h3>
+                <p class = "author-bio">
+                    Nominated for his short story,<br> <i>The Beaver Pelts</i>.
+                </p>
+            </article>
+            <article class = "author-nom-card">
+                <img src = "https://images.pexels.com/photos/3657429/pexels-photo-3657429.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                     alt = "rachel-mewberg-pic">
+                <h3 class = "author-name">
+                    Rachel Mewberg
+                </h3>
+                <p class = "author-bio">
+                    Nominated for her short story,<br> <i>Where My Heart Drifted Slowly</i>.
+                </p>
+            </article>
+            <article class = "author-nom-card">
+                <img src = "https://images.pexels.com/photos/4307688/pexels-photo-4307688.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                     alt = "anika-laghari-pic" class = "anika-laghari-pic">
+                <h3 class = "author-name">
+                    Anika Laghari
+                </h3>
+                <p class = "author-bio">
+                    Nominated for her short story,<br> <i>The Withering Leaves</i>.
+                </p>
+            </article>
+            <article class = "author-nom-card">
+                <img src = "https://images.pexels.com/photos/2379429/pexels-photo-2379429.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                     alt = "justin-dickerson-pic" class = "justin-dickerson-pic">
+                <h3 class = "author-name">
+                    Justin Dickerson
+                </h3>
+                <p class = "author-bio">
+                    Nominated for his short story,<br> <i>Broken Reflections</i>
+                </p>
+            </article>
+        </section>
+    </div>
+    <br>
+    <div class = "flex-container-2">
+        <form class = "poll-form" id = "poll-award">
+            <h2 class = "poll-form-h">
+                Author Award Nominees
+            </h2>
+            <fieldset class = "row1" id = "short-story-nom">
+                <legend>
+                    Best Short Story
+                </legend>
+                <p class = "poll-info">
+                    <label>
+                        Nominees (Author):
+                    </label>
+                    <p class = "poll-nom">
+                        <input type = "radio" class = "vote-count" id = "john-crane" name = "author-nom" value = "Johnathan Crane" required/>
+                        <label for = "john-crane">
+                            Johnathan Crane
+                        </label>
+                        <span id = "vote-display-crane">
+                                <span class="total-votes">0</span> Total Votes
+                        </span>
+                    </p>
+                    <p class = "poll-nom">
+                        <input type = "radio" class = "vote-count" id = "rachel" name = "author-nom" value = "Rachel Mewberg"
+                              required/>
+                        <label for = "rachel">
+                            Rachel Mewberg
+                        </label>
+                        <span id = "vote-display-mewberg">
+                            <span class="total-votes">0</span> Total Votes
+                        </span>
+                    </p>
+                    <p class = "poll-nom">
+                        <input type = "radio" class = "vote-count" id = "anika" name = "author-nom" value = "Anika Laghari"
+                              required/>
+                        <label for = "anika">
+                            Anika Laghari
+                        </label>
+                        <span id = "vote-display-laghari">
+                            <span class="total-votes">0</span> Total Votes
+                        </span>
+                    </p>
+                    <p class = "poll-nom">
+                        <input type = "radio" class = "vote-count" id = "justin" name = "author-nom" value = "Justin Dickerson"
+                              required/>
+                        <label for = "justin">
+                            Justin Dickerson
+                        </label>
+                        <span id = "vote-display-dickerson">
+                            <span class="total-votes">0</span> Total Votes
+                        </span>
+                    </p>
+                <p>
+                    <button type = "submit" form = "poll-award" value = "Submit" class = "poll-choice-btn"
+                    id = "poll-submit">
+                        Submit
+                    </button>
+
+                    <!--Added a clear storage button to test clearing the local storage, commented out for anyone to clear
+                        for new vote counts
+                    <button class = "clear-storage" onclick = "localStorage.clear()">
+                        Clear Storage
+                    </button>-->
+                </p>
+            </fieldset>
+        </form>
     </div>
     <br>
 </main>
@@ -50,5 +162,9 @@
         </p>
     </address>
 </footer>
+    <script src = "js/conference.js"></script>
+    <script>
+        showVotes();
+    </script>
 </body>
 </html>

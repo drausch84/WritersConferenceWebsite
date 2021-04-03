@@ -70,7 +70,7 @@ h1{
 }
 .conference-img{
     height:300pt;
-    width:500px;
+    width:675px;
     border: 5px solid #191970;
 }
 .workshop-h{
@@ -118,10 +118,6 @@ h1{
 .workshop-button:hover{
     background-position: 100%;
     color: #191970;
-}
-.workshop-button-font{
-    font-family: 'Merriweather', serif;
-    font-size:13pt;
 }
 
 .flex-child-2{
@@ -349,18 +345,6 @@ h1{
 .poll-button:hover{
     background-position: 100%;
     color: #191970;
-}
-
-/* poll.html page css*/
-.poll-h{
-    font-family: 'Lora', serif;
-    font-size: 28pt;
-    color:#191970;
-    font-weight:bold;
-    margin-left:34%;
-}
-.coming-soon-img{
-    margin-left:32%;
 }
 
 /*activities.html page css*/
@@ -720,32 +704,6 @@ iframe{
     font-family: 'Lora', serif;
     font-size:13pt;
 }
-.workshop-register-button {
-    text-decoration:none;
-    width: 145px;
-    padding:30pt 0 30pt;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Merriweather', serif;
-    font-size:14pt;
-    font-weight: 600;
-    margin: 4% 2% 10%;
-    cursor: pointer;
-    display: inline-block;
-    color: #ffb347;
-    border: 3px solid #191970;
-    background-image: -webkit-linear-gradient(30deg, #191970 50%, transparent 50%);
-    background-image: linear-gradient(30deg, #191970 50%, transparent 50%);
-    background-size: 500pt;
-    background-repeat: no-repeat;
-    background-position: 0;
-    -webkit-transition: background 300ms ease-in-out;
-    transition: background 300ms ease-in-out;
-}
-.workshop-register-button:hover {
-    background-position: 100%;
-    color: #191970;
-}
 
 /*registration.html css*/
 .registration-form-h{
@@ -812,7 +770,179 @@ form.registration-form input[type=text]{
 form.registration-form input[type=url]{
     width:155px;
 }
+#personal-info{
+    transition: background-color 0.7s ease, box-shadow 0.6s linear;
+    background-color: white;
+    box-shadow: 0 0 0 0 #191970;
+    margin: 0.5em;
+}
+#personal-info:hover {
+    background-color:#e8f4f8;
+    color:#191970;
+    box-shadow: 0 0 0 5px #191970;
+}
+.row1:hover .reg-index{
+    transition: opacity 0.5s ease-in-out;
+    opacity:0;
+}
+#company-info{
+    transition: background-color 0.7s ease, box-shadow 0.6s linear;
+    background-color: white;
+    box-shadow: 0 0 0 0 #191970;
+    margin: 0.5em;
+}
+#company-info:hover{
+    background-color:lightgray;
+    color: #191970;
+    box-shadow: 0 0 0 5px #191970;
+}
+.row2:hover .reg-index{
+    transition: opacity 0.5s ease-in-out;
+    opacity:0;
+}
+.row3:hover .reg-index{
+    transition: opacity 0.5s ease-in-out;
+    opacity:0;
+}
+.row4:hover .reg-index{
+    transition: opacity 0.5s ease-in-out;
+    opacity:0;
+}
+#workshop-info{
+    transition: background-color 0.7s ease, box-shadow 0.6s linear;
+    background-color: white;
+    box-shadow: 0 0 0 0 #191970;
+    margin: 0.5em;
+}
+#workshop-info:hover{
+    background-color:#e8f4f8;
+    color:#191970;
+    box-shadow: 0 0 0 5px #191970;
+}
+.row5:hover .reg-index{
+    transition: opacity 0.5s ease-in-out;
+    opacity:0;
+}
 
+/* poll.html page css*/
+.short-story-noms{
+    font-family: 'Lora', serif;
+    font-size: 30pt;
+    color:#191970;
+    font-weight:bold;
+    position:absolute;
+    right:38%;
+}
+.nominee-row{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin:  0 10pt;
+    padding-top:65pt;
+}
+.author-nom-card{
+    width: 325px;
+    padding: 20pt;
+    margin: 10pt;
+    border: 1px solid #d7d7d7;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    background-color: white;
+}
+.author-nom-card:hover{
+    box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.15);
+}
+.author-nom-card > img{
+    border-radius: 2px;
+    max-width: 100%;
+    margin-bottom: 10px;
+    height: 370px;
+}
+.anika-laghari-pic{
+    width:300px;
+}
+.justin-dickerson-pic{
+    width:300px;
+}
+.poll-form-h{
+    font-family: 'Lora', serif;
+    font-size: 24pt;
+    font-weight:bolder;
+    text-align:center;
+    color:#191970;
+}
+form.poll-form legend{
+    color:#191970;
+    padding:2pt;
+    margin-left: 14pt;
+    font-weight:bold;
+    font-size: 22pt;
+}
+form.poll-form{
+    background:white;
+    border: 2px solid #191970;
+    width:100%;
+}
+form.poll-form fieldset{
+    border:2px solid gray;
+}
+form.poll-form label{
+    padding:3pt;
+    font-family:'Lora', serif;
+    font-size:12pt;
+    font-weight:bolder;
+}
+.poll-choice-btn{
+    text-decoration:none;
+    border-radius:16%;
+    width: 80px;
+    padding:8pt 0 8pt;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Merriweather', serif;
+    font-size:10pt;
+    font-weight: 600;
+    margin: 1% 17% 3%;
+    cursor: pointer;
+    display: inline-block;
+    color: #ffb347;
+    border: 3px solid #191970;
+    background-image: -webkit-linear-gradient(30deg, #191970 50%, transparent 50%);
+    background-image: linear-gradient(30deg, #191970 50%, transparent 50%);
+    background-size: 500pt;
+    background-repeat: no-repeat;
+    background-position: 0;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+.poll-choice-btn:hover{
+    background-position: 100%;
+    color: #191970;
+}
+#vote-display-crane{
+    margin-left:110pt;
+    font-size:14pt;
+    font-weight:bolder;
+    font-family:'Quicksand', sans-serif;
+}
+#vote-display-mewberg{
+    margin-left:112pt;
+    font-size:14pt;
+    font-weight:bolder;
+    font-family:'Quicksand', sans-serif;
+}
+#vote-display-laghari{
+    margin-left:128pt;
+    font-size:14pt;
+    font-weight:bolder;
+    font-family:'Quicksand', sans-serif;
+}
+#vote-display-dickerson{
+    margin-left:112pt;
+    font-size:14pt;
+    font-weight:bolder;
+    font-family:'Quicksand', sans-serif;
+}
 /*thankyou.html css*/
 .checkmark-img{
     height:100pt;
@@ -847,7 +977,10 @@ form.registration-form input[type=url]{
     text-decoration:none;
     color:black;
 }
-.thankyou-email:hover{
+.thankyou-color{
+    color:#191970;
+}
+.thankyou-color:hover{
     color:limegreen;
 }
 .home-renav{
@@ -857,6 +990,8 @@ form.registration-form input[type=url]{
 .home-renav:hover{
     color:limegreen;
 }
+
+/*error page css*/
 /*media queries responsive css*/
 @media (max-width: 800px) {
     .flex-child-1, .flex-child-2 {
@@ -864,9 +999,6 @@ form.registration-form input[type=url]{
     }
 }
 @media (max-width:800px){
-    .img-column, .activity-list-block{
-        flex:100%;
-    }
 }
 @media (max-width:800px){
     .denver-img{

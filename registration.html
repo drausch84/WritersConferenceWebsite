@@ -33,19 +33,26 @@
     </h1>
     <div class = "flex-container-1">
         <div class = "registration-form-div">
-            <form action = "thankyou.html" method = "get" class = "registration-form" id = "regform">
+            <form action = "thankyou.html" class = "registration-form" id = "regform" onsubmit = "return validateResponse()">
                 <h2 class = "registration-form-h">
                     Registration Form
                 </h2>
-                <fieldset class = "row1">
-                    <legend>
-                        Personal Details
+                <fieldset class = "row1" id = "personal-info">
+                    <legend class = "reg-index">
+                        Personal Information
                     </legend>
+                    <p class = "registration-info">
+                        <label>
+                            Conference ID #
+                        </label>
+                        <input type = "text" id = "confID" placeholder = "Conference ID" title = "Enter 6 digit ID # in this format: 123456"
+                               pattern = "^\d{6,}$"/>
+                    </p>
                     <p class = "registration-info">
                         <label>
                             Title
                         </label>
-                        <select class = "title" title = "Select a title">
+                        <select class = "title" id = "nameTitle" title = "Select a title">
                             <option hidden disabled selected value> -- select an option -- </option>
                             <option value = "mr">
                                 Mr.
@@ -65,47 +72,19 @@
                         <label>
                             First Name *
                         </label>
-                        <input type = "text" placeholder = "First Name" title = "Enter your first name" pattern = "[a-zA-Z]+" required/>
+                        <input type = "text" id = "firstName" placeholder = "First Name" title = "Enter your first name" pattern = "[a-zA-Z]+" required/>
                     </p>
                     <p class = "registration-info">
                         <label>
                             Last Name *
                         </label>
-                        <input type = "text" placeholder = "Last Name" title = "Enter your last name" pattern = "[a-zA-Z\-]+" required/>
+                        <input type = "text" id = "lastName" placeholder = "Last Name" title = "Enter your last name" pattern = "[a-zA-Z\-]+" required/>
                     </p>
-                    <p class = "registration-info">
-                        <label>
-                            Company Website
-                        </label>
-                        <input type ="url" id = "website" name = "website" placeholder = "https://www.job.com" title = "Enter a Company URL"/>
-                    </p>
-                    <p class = "registration-info">
-                        <label>
-                            Job Position *
-                        </label>
-                        <input type = "text" placeholder = "Job Position" pattern = "[a-zA-Z0-9\s]+" title = "Enter job position" required/>
-                    </p>
-                    <p class = "registration-info">
-                        <label>
-                            Name of Company (Employer) *
-                        </label>
-                        <input type = "text" placeholder = "Employer Name" pattern = "[a-zA-Z0-9\s]+" title = "Enter employer name" required/>
-                    </p>
-                    <p class = "registration-info">
-                        <label class = "required">
-                            * Required Field
-                        </label>
-                    </p>
-                </fieldset>
-                <fieldset class = "row2">
-                    <legend>
-                        Contact Info.
-                    </legend>
                     <p class = "registration-info">
                         <label>
                             Street Address Line 1 *
                         </label>
-                        <input type = "text" class = "long" placeholder = "Street and Number, P.O. box, c/o" pattern = "[a-zA-Z0-9\ \#]+"
+                        <input type = "text" class = "long" id = "streetAddress" placeholder = "Street and Number, P.O. box, c/o" pattern = "[a-zA-Z0-9\ \#]+"
                                title = "Enter street address" required/>
                     </p>
                     <p class = "registration-info">
@@ -119,7 +98,7 @@
                         <label>
                             City *
                         </label>
-                        <input type = "text" placeholder = "City" pattern = "[a-zA-Z\ ]+" title = "Enter city name" required/>
+                        <input type = "text" id = "city" placeholder = "City" pattern = "[a-zA-Z\ ]+" title = "Enter city name" required/>
                     </p>
                     <p class = "registration-info">
                         <label>
@@ -185,21 +164,21 @@
                             Zip Code *
                         </label>
                         <input type = "text" id = "zipcode" name = "zipcode" placeholder = "5 Digit Zip Code" pattern="[0-9]{5}"
-                               title = "Enter zip code" required/>
+                               title = "Enter zip code in this format: 11111" required/>
                     </p>
                     <p class = "registration-info">
                         <label>
                             Phone *
                         </label>
                         <input type = "tel" id = "phone" name = "phone" placeholder = "123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                               title = "Enter phone #" required/>
+                               title = "Enter phone # in this format: 111-111-1111" required/>
                     </p>
                     <p class = "registration-info">
                         <label>
                             Email *
                         </label>
                         <input type = "email" id = "email" name = "email" placeholder = "myemail@DWC.com"
-                               title = "Enter email address" required/>
+                               title = "Enter email address in this format: my@email.com" required/>
                     </p>
                     <p class = "registration-info">
                         <label class = "required">
@@ -207,61 +186,28 @@
                         </label>
                     </p>
                 </fieldset>
-                <fieldset class = "row3">
-                    <legend>
-                        Billing Information
+                <fieldset class = "row2" id = "company-info">
+                    <legend class = "reg-index">
+                        Company Information
                     </legend>
                     <p class = "registration-info">
                         <label>
-                            Billing First Name *
+                            Name of Company (Employer) *
                         </label>
-                        <input type = "text" placeholder = "First Name" pattern = "[a-zA-Z]+" title = "Enter first name" required/>
-                        <label>
-                            Billing Last Name *
-                        </label>
-                        <input type = "text" placeholder = "Last Name" pattern = "[a-zA-Z-]+" title = "Enter last name" required/>
+                        <input type = "text" id = "employer" placeholder = "Employer Name" pattern = "[a-zA-Z0-9\s]+" title = "Enter employer name" required/>
                     </p>
                     <p class = "registration-info">
                         <label>
-                            Card Type *
+                            Company Website
                         </label>
-                        <input type = "radio" id = "visa" name = "cardtype" value = "visa" title = "Choose if Visa" required/>
-                        <label for = "visa">
-                            Visa
-                        </label>
-                        <input type = "radio" id = "mastercard" name = "cardtype" value = "mastercard" title = "Choose if Mastercard"
-                               required/>
-                        <label for = "mastercard">
-                            Mastercard
-                        </label>
-                        <input type = "radio" id = "americanexpress" name = "cardtype" value = "americanexpress"
-                               title = "Choose if American Express" required/>
-                        <label for = "americanexpress">
-                            American Express
-                        </label>
+                        <input type ="url" id = "website" name = "website" placeholder = "https://www.job.com"
+                               title = "Enter a Company URL in this format: https://www.website.com"/>
                     </p>
                     <p class = "registration-info">
                         <label>
-                            Card Number *
+                            Job Position *
                         </label>
-                        <input type = "text" placeholder = "1234 1234 1234 1234" pattern = "[0-9]{16}"
-                               title = "Enter credit card #" required/>
-                        <label>
-                            Card Security Value (CSV) *
-                        </label>
-                        <input type = "text" placeholder= "CSV (4 digits)" pattern = "[0-9]{4}" title = "Enter CSV" required/>
-                    </p>
-                    <p class = "registration-info">
-                        <label>
-                            Expiration Date (Year) *
-                        </label>
-                        <input type = "text" placeholder = "Year" pattern = "[2][0]([1-2][0-9])"
-                               title = "Enter expiration year" required/>
-                        <label>
-                            Expiration Date (Month) *
-                        </label>
-                        <input type = "text" placeholder = "Month" pattern = "(0[1-9]|1[0-2])"
-                               title = "Enter expiration month" required/>
+                        <input type = "text" id = "job-pos" placeholder = "Job Position" pattern = "[a-zA-Z0-9\s]+" title = "Enter job position" required/>
                     </p>
                     <p class = "registration-info">
                         <label class = "required">
@@ -269,33 +215,8 @@
                         </label>
                     </p>
                 </fieldset>
-                <fieldset class = "row4">
-                    <legend>
-                        Conference Meal Plan
-                    </legend>
-                    <p class = "mealplan">
-                        <label>
-                            Meal Plan (Choose 1) *
-                        </label>
-                        <input type = "radio" id = "mealpack" name = "mealchoice" value = "mealpack"
-                               title = "Choose if choice is meal pack" required/>
-                        <label for = "mealpack">
-                            Meal Pack
-                        </label>
-                        <input type = "radio" id = "day-two-dinner" name = "mealchoice" value = "day-two-dinner"
-                               title = "Choose if choice is only day two dinner" required/>
-                        <label for = "day-two-dinner">
-                            Day 2 Dinner Only
-                        </label>
-                    </p>
-                    <p class = "registration-info">
-                        <label class = "required">
-                            * Required Field
-                        </label>
-                    </p>
-                </fieldset>
-                <fieldset class = "row5">
-                    <legend>
+                <fieldset class = "row5" id = "workshop-info">
+                    <legend class = "reg-index">
                         Workshop Schedule Selections
                     </legend>
                     <p class = "workshop-session-one">
@@ -323,17 +244,17 @@
                             Session 2 Workshop:
                         </label>
                         <input type = "radio" id = "comedy-writing" name = "session-two-choice" value = "comedy-writing"
-                               title = "Choose for comedy writing workshop" required/>
+                               title = "Choose for comedy writing workshop"/>
                         <label for = "comedy-writing">
                             The Art of Comedic Writing
                         </label>
                         <input type = "radio" id = "poetry-writing" name = "session-two-choice" value = "poetry-writing"
-                               title = "Choose for poetry workshop" required/>
+                               title = "Choose for poetry workshop"/>
                         <label for = "poetry-writing">
                             Fundamentals of Writing Poetry
                         </label>
                         <input type = "radio" id = "char-development" name = "session-two-choice" value = "char-development"
-                               title = "Choose for character development workshop" required/>
+                               title = "Choose for character development workshop"/>
                         <label for = "char-development">
                             Character Development: Creating Memorable Characters
                         </label>
@@ -365,7 +286,8 @@
                     </p>
                 </fieldset>
             </form>
-            <button type = "submit" form = "regform" value = "Submit" class = "registration-submit-button">
+            <button type = "submit" form = "regform" value = "Submit" class = "registration-submit-button"
+            onclick = "setCookie()">
                 Submit
             </button>
         </div>
@@ -393,5 +315,6 @@
         </p>
     </address>
 </footer>
+    <script src = "js/conference.js"></script>
 </body>
 </html>
