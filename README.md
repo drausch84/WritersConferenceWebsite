@@ -1,7 +1,7 @@
 # WritersConferenceWebsite
 
 **Technologies Used**
--Javascript, HTML, CSS
+- Javascript, HTML, CSS
 
 ## About the Project
 This was a project for a web development CS course in which I had to design a conference website with a theme of my choosing.  While displaying proficiency in
